@@ -14,7 +14,7 @@ jobs:
       image: obolibrary/odkfull
     steps:  
     - name: all
-      run: make all
+      run: pwd && make all
     - name: prepare_release
       run: make prepare_release
     - name: vocabulary
