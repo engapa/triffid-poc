@@ -8,17 +8,16 @@ on:
 jobs:
   testbox:
     runs-on: ubuntu-latest
-    env:
-      working-directory: src/ontology
+    defaults:
+      run:
+        working-directory: ./src/ontology
     container:
       image: obolibrary/odkfull
-    steps:  
+    steps:
+    - uses: actions/checkout@v1
     - name: all
       run: make all
-      working-directory: ${{env.working-directory}}
     - name: prepare_release
       run: make prepare_release
-      working-directory: ${{env.working-directory}}
     - name: vocabulary
       run: make vocab
-      working-directory: ${{env.working-directory}}
