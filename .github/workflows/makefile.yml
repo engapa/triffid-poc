@@ -14,10 +14,14 @@ jobs:
     container:
       image: obolibrary/odkfull
     steps:
-    - uses: actions/checkout@v1
-    - name: all
-      run: make all
-    - name: release
-      run: make release
+    - uses: actions/checkout@v2
+    - name: prepare_release
+      run: make prepare_release
     - name: vocabulary
       run: make vocab
+    - name: Release on github
+      run: |
+        git config --global user.name 'engapa-bot'
+        git config --global user.email 'engapa-bot@engapa.github.com'
+        git commit -am "Release new ontology version"
+        git push
