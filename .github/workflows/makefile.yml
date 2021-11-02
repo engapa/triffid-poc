@@ -1,0 +1,19 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  testbox:
+    runs-on: ubuntu-latest
+    container:
+      image: obolibrary/odkfull
+    steps:  
+    - name: all
+      run: make all
+    - name: prepare_release
+      run: make prepare_release
+    - name: vocabulary
+      run: make vocab
