@@ -14,8 +14,11 @@ jobs:
       image: obolibrary/odkfull
     steps:  
     - name: all
-      run: pwd && make all
+      run: make all
+      working-directory: ${{env.working-directory}}
     - name: prepare_release
       run: make prepare_release
+      working-directory: ${{env.working-directory}}
     - name: vocabulary
       run: make vocab
+      working-directory: ${{env.working-directory}}
