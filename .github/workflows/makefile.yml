@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: all
       run: make all
-    - name: prepare_release
-      run: make prepare_release
+    - name: release
+      run: make release
     - name: vocabulary
       run: make vocab
