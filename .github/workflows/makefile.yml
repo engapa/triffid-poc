@@ -9,7 +9,7 @@ jobs:
   testbox:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./src/ontology
+      working-directory: src/ontology
     container:
       image: obolibrary/odkfull
     steps:  

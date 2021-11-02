@@ -1,3 +1,4 @@
+[![Makefile CI](https://github.com/engapa/triffid-poc/actions/workflows/makefile.yml/badge.svg)](https://github.com/engapa/triffid-poc/actions/workflows/makefile.yml)
 # triffid
 
 This ontology ... 
