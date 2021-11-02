@@ -25,3 +25,4 @@ jobs:
         git config --global user.email 'engapa-bot@engapa.github.com'
         git commit -am "Release new ontology version"
         git push
+      working-directory: ./
