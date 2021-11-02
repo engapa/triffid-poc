@@ -1,9 +1,6 @@
-[![Build Status](https://travis-ci.org/cmungall/triffid-behavior.svg?branch=master)](https://travis-ci.org/cmungall/triffid-behavior)
-[![DOI](https://zenodo.org/badge/13996/cmungall/triffid-behavior.svg)](https://zenodo.org/badge/latestdoi/13996/cmungall/triffid-behavior)
+# triffid
 
-# triffid-behavior
-
-This ontology... YOUR DESCRIPTION HERE
+This ontology ... 
 
 ## Versions
 
@@ -19,10 +16,7 @@ http://purl.obolibrary.org/obo/triffo.owl
 
 Editors of this ontology should use the edit version, [src/ontology/triffo-edit.owl](src/ontology/triffo-edit.owl)
 
-## Contact
-
-Please use this GitHub repository's [Issue tracker](https://github.com/cmungall/triffid-behavior/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
-
 ## Acknowledgements
 
-This ontology repository was created using the [ontology starter kit](https://github.com/INCATools/ontology-starter-kit)
+This ontology repository was created using the [ontology starter kit](https://github.com/INCATools/ontology-starter-kit) and is a fork
+of the original https://github.com/cmungall/triffid-behavior

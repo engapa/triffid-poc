@@ -5,3 +5,5 @@ src/ontology/triffo.obo
 src/ontology/triffo.owl
 semantic.cache
 bin/
+target/
+*.jar

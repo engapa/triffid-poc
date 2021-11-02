@@ -35,7 +35,7 @@ prepare_release: all
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 $(ONT).owl: $(SRC)
-	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+	$(ROBOT) -vv reason -i $^ -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $^
 
 # ----------------------------------------
 # Import modules
@@ -89,13 +89,6 @@ REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
-# ----------------------------------------
-# Docker (experimental)
-# ----------------------------------------
-IM=build-$(ONT)
-build-docker:
-	docker build -t $(ONT) .
-
 #-----------------------------------------
 # Vocabulary (experimental)
 #-----------------------------------------
@@ -104,8 +97,8 @@ vocab:
 	cd vocabulary
 	# mvn archetype:generate -DgroupId=$(JAVA_PACKAGE) -DartifactId=$(ONT) -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=true
 	# extra dependencies in pom.xml for jena
-	schemagen -c schemagen-conf.xml -i ../triffo.owl -o triffo/src/main/java --package $(JAVA_PACKAGE)
-	cd $(ONT) && mvn package
+	schemagen -c vocabulary/schemagen-conf.xml -i triffo.owl -o vocabulary/triffo/src/main/java --package $(JAVA_PACKAGE)
+	cd vocabulary/$(ONT) && mvn package
 	# mvn publish
 
 
